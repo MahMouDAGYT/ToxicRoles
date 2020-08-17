@@ -24,7 +24,7 @@ module.exports = class extends Command {
 			.setDescription(`**Guild Roles __${message.guild.name}__**`)
 			.setColor('BLUE')
 			.setThumbnail(message.guild.iconURL({ dynamic: true }))
-			.addField(`Roles Count [${roles.length - 1}]`, roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None')
+			.addField(`Roles Count [${roles.length - 1}]`, roles.length < 500 ? roles.join(', ') : roles.length > 500 ? this.client.utils.trimArray(roles) : 'None')
 			.setTimestamp();
 		message.channel.send(embed);
 	}
